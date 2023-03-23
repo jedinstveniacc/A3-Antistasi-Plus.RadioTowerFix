@@ -80,11 +80,11 @@ while {visibleMap} do {
 			_textX = format [localize "STR_A3A_cityinfo_text_1",_siteX,_numCiv,_prestigeOPFOR,_prestigeBLUFOR,"%",FactionGet(occ,"name"),FactionGet(reb,"name")];
 			_positionX = getMarkerPos _siteX;
 			_result = "NONE";
-			switch (_power) do {
+			_result = switch (_power) do {
 				case teamPlayer: {FactionGet(reb,"name")};
 				case Occupants: {FactionGet(occ,"name")};
 				case Invaders: {FactionGet(inv,"name")};
-                default {"NONE"};
+                	default {"NONE"};
 			};
 
 			_textX = format [localize "STR_A3A_cityinfo_influence",_textX,_result];
